@@ -1,76 +1,71 @@
 
-*{margin:0;padding:0;}
-html,body{height:100vh;width:100vw;
-
-background-color:#001;}
-
-
-main {
-margin:auto;
-width:400px;
-height:400px;
-position:fixed;
-inset:0;
-perspective:3000px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    height:100vh;
+    padding:20px 0px;
+    background-color:#001;
 }
 
-#contner {
-display:flex;
-align-items:center;
-justify-content:center;
-transform-style:preserve-3d;
-width:100%;
-height:100%;
+#nav{
+    position: relative;
+    height: 50px;
+    width: 70vw;
+    margin: auto;
+    overflow: hidden;
+    border-radius:.5vw;
 }
 
-
-
-section {
-display:flex;
-align-items:center;
-justify-content:center;
-outline:3px solid #fff;
-position:absolute;
-height:50%;
-width:50%;
-color:white;
-
-
+#nav .Go{
+    position: absolute;
+    height: 100%;
+    width: 7%;
+    background-color: rgb(3, 54, 54);
+    cursor: pointer;
 }
 
-
-#front{
-transform:translateZ(100px);
-
+#nav .Go:active{
+    background-color: rgb(150, 137, 137);
 }
 
-
-#behind{
-transform:translateZ(-100px);
-
+#nav .GoRight{
+    right: 0;
 }
 
-#ri{
-transform:rotateY(90deg) translateZ(100px);
-
+#nav .Goleft{
+    left: 0;
 }
 
-
-#li{
-transform:rotateY(-90deg) translateZ(100px);
-
+#nav .pages{
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgb(146, 29, 29);
+    height: 100%;
+    width: 86%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width:none;
 }
-#top{
-transform:rotateX(-90deg) translateZ(100px);
 
-}
-
-#bot{
-transform:rotateX(-90deg) translateZ(-100px);
+#nav .pages h2{
+    width: fit-content;
+    padding: 10px;
+    height: 100%;
+    font-size:20px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
 
 }
 
-span {
-transform:rotateY(180deg)rotate(180deg) ;
-
+#nav .pages h2:hover{
+    background-color: aqua;
 }

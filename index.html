@@ -1,55 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D-css</title>
   <link rel="stylesheet" href="main.css">
-
-
-
 </head>
 
 <body>
-
-  <main>
-    <div id="contner">
-
-
-
-      <section id="front"></section>
+  <header id="nav">
+    <aside class="GoRight Go" id="GoRight"></aside>
+    <aside class="Goleft Go" id="Goleft"></aside>
 
 
-      <section id="behind"></section>
+    <section class="pages" id="pagesBtnsBox">
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      <h2>cube</h2>
+      
+    </section>
+  </header>
+  <main id="3dBox">
 
-      <section id="ri"></section>
-
-      <section id="li"></section>
-
-      <section id="top"></section>
-
-      <section id="bot"><span></span></section>
-
-    </div>
   </main>
-
-
-
-
-  <script type="text/javascript">
-
-    let xx = 0;
-    function mov(n) {
-      let cub = document.getElementById("contner");
-      xx += 5;
-      let y = n.changedTouches[0].clientY;
-      cub.style.transform = `rotateX(${y}deg) rotateY(${xx}deg)`;
-    }
-
-
-
-
-
-  </script>
+  <script src="main.js"></script>
 </body>
 
 </html>
