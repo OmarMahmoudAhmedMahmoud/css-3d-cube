@@ -2,12 +2,15 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
+    box-sizing:border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+html{
+
 }
 body{
     height:100vh;
-    padding:20px 0px;
+    padding: 5px;
     background-color:#001;
 }
 
@@ -26,14 +29,31 @@ body{
     width: 7%;
     background-color: rgb(3, 54, 54);
     cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+#nav .Go svg{
+    height: 60%;
+    width: 50%;
+
+    
+}
+#nav .Go path{
+    fill: rgb(72, 170, 26);
 }
 
 #nav .Go:active{
     background-color: rgb(150, 137, 137);
 }
+#nav .Go:active path{
+    fill:  rgb(158, 3, 3);
+}
 
 #nav .GoRight{
     right: 0;
+}
+#nav .GoRight svg{
+    transform: rotate(180deg);
 }
 
 #nav .Goleft{
@@ -48,24 +68,56 @@ body{
     height: 100%;
     width: 86%;
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    gap:0;
     flex-wrap: nowrap;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    scrollbar-width:thin;
+    scrollbar-width:none;
 }
 
 #nav .pages h2{
     width: fit-content;
-    padding: 10px;
+    padding: 10px 20px;
     height: 100%;
     font-size:20px;
     display: grid;
+    font-weight: 900 ;
+    text-transform: uppercase;
     place-items: center;
+    color: white;
+   
     cursor: pointer;
+    user-select: none;
 
 }
 
-#nav .pages h2:hover{
-    background-color: aqua;
+
+#_3dBox{
+    height:calc( 100vh - 65px);
+    margin-top: 5px;
+    display: grid;
+    place-items: center;
+    background-color: rgb(87, 22, 22);
+    color: white;
+    font-size: 160px;
 }
+@media only screen and (max-width:700px) {
+    #nav{
+        height: 50px;
+        width: 90vw;
+    }
+    
+    #nav .Go{
+        width: 15%;
+    }
+    #nav .pages{
+        width: 85%;
+    }
+    
+    /* 
+    #nav .pages h2{
+    }
+    */
+
+} 
