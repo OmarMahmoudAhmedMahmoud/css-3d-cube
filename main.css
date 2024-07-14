@@ -52,7 +52,7 @@ body{
     flex-wrap: nowrap;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    scrollbar-width:none;
+    scrollbar-width:thin;
 }
 
 #nav .pages h2{
