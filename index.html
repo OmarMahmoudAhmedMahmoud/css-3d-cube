@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title></title>
-<link rel="stylesheet" href="main.css">
+  <title></title>
+  <link rel="stylesheet" href="main.css">
 
 
 
 </head>
-<body ontouchstart="get(event)" ontouchend="d3(event)" ontouchmove="mov(event)">
+
+<body>
 
   <main>
-    <div id="contner" >
-    
-       
+    <div id="contner">
 
-       <section id="front" ></section>
-     
-     
-       <section id="behind" ></section>
-       
-       <section id="ri" ></section>
-       
-       <section id="li" ></section>
-       
-       <section id="top" ></section>
-       
-       <section id="bot" ><span></span></section>
-       
+
+
+      <section id="front"></section>
+
+
+      <section id="behind"></section>
+
+      <section id="ri"></section>
+
+      <section id="li"></section>
+
+      <section id="top"></section>
+
+      <section id="bot"><span></span></section>
+
     </div>
   </main>
-   
-
-
-
-<script type="text/javascript">
-
-let xx=0;
-function mov(n){
-let cub = document.getElementById("contner");
-xx+=5;
-let y=n.changedTouches[0].clientY;
-cub.style.transform=`rotateX(${y}deg) rotateY(${xx}deg)`;
-}
 
 
 
 
+  <script type="text/javascript">
 
-</script>
+    let xx = 0;
+    function mov(n) {
+      let cub = document.getElementById("contner");
+      xx += 5;
+      let y = n.changedTouches[0].clientY;
+      cub.style.transform = `rotateX(${y}deg) rotateY(${xx}deg)`;
+    }
+
+
+
+
+
+  </script>
 </body>
+
 </html>
