@@ -40,8 +40,23 @@ nav.routing={
             X = e.clientX;  
             Y = e.clientY;
             box.style.transform=`rotateX(${(Y/2)}deg) rotateY(${(X/2)}deg)`;
+        });
+        // for toush screen
+        this.mainBox.addEventListener("touchstart",function () {
+            check = true;
+        })
+        this.mainBox.addEventListener("touchend",function () {
+            check = false
+        })
+
+        this.mainBox.addEventListener("touchmove",function (e) {
+            if (!check) return
+            X = e.clientX;  
+            Y = e.clientY;
+            box.style.transform=`rotateX(${(Y/2)}deg) rotateY(${(X/2)}deg)`;
         })
     },
+
     render: function () {
         let currunt = this.currnt[0];
         this.currnt[0].style.backgroundColor=nav.color.scond;
