@@ -12,7 +12,7 @@ nav.color= {
 nav.routing={
     mainBox : document.getElementById("_3dBox"),
     currnt : [document.getElementById("3d-tri"),
-        'Coomin Soon'
+        'Comin Soon'
     ] ,
 
     loadPage: function(){
