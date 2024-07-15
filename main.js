@@ -114,11 +114,11 @@ nav.routing.pages={
     ],
     Pyramid  : [
         document.getElementById("3d-tri"),
-        `Comming Soon`
+        `Coming Soon`
     ],
     ball : [
         document.getElementById("3d-ball"),
-        `Comming Soon`
+        `Coming Soon`
     ]
 }
 
