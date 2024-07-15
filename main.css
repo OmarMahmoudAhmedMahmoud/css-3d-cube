@@ -6,32 +6,57 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 html{
-
+    --main:rgb(156, 135, 31);
+    --scond:rgb(0, 29, 61);
+    --white:rgb(231, 231, 212);
+    --black :rgb(4, 22, 39);
 }
 body{
     height:100vh;
-    padding: 5px;
-    background-color:#001;
+    padding: 5px 0px 0px 0px;
+    overflow: hidden;
+    background-color:var(--white)!important;
 }
 
 #nav{
-    position: relative;
     height: 50px;
     width: 70vw;
     margin: auto;
     overflow: hidden;
+    display: flex;
     border-radius:.5vw;
+    max-width: 800px;
+    width: fit-content;
+    user-select: none;
 }
 
 #nav .Go{
-    position: absolute;
+    user-select: none;
     height: 100%;
-    width: 7%;
-    background-color: rgb(3, 54, 54);
+    width: 50px;
+    background-color: var(--scond);
     cursor: pointer;
     display: grid;
+
     place-items: center;
 }
+
+#nav .pages{
+
+    margin: auto;
+    background-color: var(--main);
+    height: 100%;
+    display: flex;
+    flex: 1 0 0;
+    
+
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width:none;
+    position: static !important;
+}
+
 #nav .Go svg{
     height: 60%;
     width: 50%;
@@ -39,14 +64,14 @@ body{
     
 }
 #nav .Go path{
-    fill: rgb(72, 170, 26);
+    fill: var(--main);
 }
 
 #nav .Go:active{
-    background-color: rgb(150, 137, 137);
+    background-color: var(--main);
 }
 #nav .Go:active path{
-    fill:  rgb(158, 3, 3);
+    fill: var(--black);
 }
 
 #nav .GoRight{
@@ -60,22 +85,6 @@ body{
     left: 0;
 }
 
-#nav .pages{
-    right: 0;
-    left: 0;
-    margin: auto;
-    background-color: rgb(146, 29, 29);
-    height: 100%;
-    width: 86%;
-    display: flex;
-    justify-content: center;
-    gap:0;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width:none;
-}
-
 #nav .pages h2{
     width: fit-content;
     padding: 10px 20px;
@@ -85,39 +94,147 @@ body{
     font-weight: 900 ;
     text-transform: uppercase;
     place-items: center;
-    color: white;
-   
     cursor: pointer;
     user-select: none;
+    color: white;
 
 }
 
 
 #_3dBox{
-    height:calc( 100vh - 65px);
+    height:calc( 100vh - 60px);
     margin-top: 5px;
     display: grid;
     place-items: center;
-    background-color: rgb(87, 22, 22);
+    background-color: var(--black);
     color: white;
-    font-size: 160px;
+    font-size: 100px;
+
 }
-@media only screen and (max-width:700px) {
-    #nav{
-        height: 50px;
-        width: 90vw;
-    }
+
+
+
+
+/* cube style */
+
+
+
+#cube-main{
+
+    width: 100%;
+    perspective: 100%;
+
+    display: grid;
+    place-items: center;
+    user-select: none;
+    --size :15vh;
+    --Ssize :-15vh;
+}
+
+#cube-box{
+    user-select: none;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform:rotateX(20deg) rotateY(250deg);
     
-    #nav .Go{
-        width: 15%;
+}
+
+
+#cube-box > div{
+    user-select: none;
+    background-color: rgb(255, 255, 255,.1);
+    inset: 0;margin: auto;
+    position: absolute;
+    width: calc( var(--size) *2);
+    /* background-color: rgb(10, 87, 10,.8); */
+    border: 2px var(--main) solid;
+    aspect-ratio: 1;
+    font-size: 50px;
+}
+
+
+#cube-box .front{
+
+    transform: translateZ(var(--size));
+}
+
+#cube-box .back{
+
+    transform: translateZ(var(--Ssize));
+}
+
+
+#cube-box .right{
+
+    transform:rotateY(90deg) translateZ(var(--Ssize));
+
+
+}
+#cube-box .left{
+
+    transform:rotateY(90deg) translateZ(var(--size));
+}
+
+
+#cube-box .top{
+
+    transform:rotateX(90deg) translateZ(var(--size));
+}
+#cube-box .bottom{
+
+    transform:rotateX(90deg) translateZ(var(--Ssize));
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:600px) {
+    #nav{
+        width:95vw;
     }
-    #nav .pages{
-        width: 85%;
-    }
+    /* #nav .Go{
+
+    } */
+    /* #nav .pages{
+
+    } */
     
     /* 
     #nav .pages h2{
     }
     */
+
+
+
+
+
+    #_3dBox{
+        font-size: 30px;
+    }
+    /* cube */
+    #cube-main{
+        --size :15vw;
+        --Ssize :-15vw;
+    }
+    #cube-box > div{
+        width: calc( var(--size) *2);
+    }
 
 } 
