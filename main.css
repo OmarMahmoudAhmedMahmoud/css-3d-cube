@@ -51,8 +51,8 @@ body{
 
     flex-wrap: nowrap;
     overflow-x: scroll;
-    scroll-behavior: smooth;
-    scrollbar-width:none;
+    /* scroll-behavior: smooth; */
+    scrollbar-width:thin;
     position: static !important;
 }
 
