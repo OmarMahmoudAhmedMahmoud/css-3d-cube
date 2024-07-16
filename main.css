@@ -37,7 +37,6 @@ body{
     background-color: var(--scond);
     cursor: pointer;
     display: grid;
-
     place-items: center;
 }
 

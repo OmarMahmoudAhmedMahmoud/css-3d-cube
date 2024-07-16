@@ -19,9 +19,11 @@ nav.routing={
         this.mainBox.innerHTML= this.currnt[1];
     },
 
-    anime3D : function(ele){
+    anime3D : function(){
 
         let check = false
+        let box = this.currnt[2];
+        let X, Y;
 
         this.mainBox.addEventListener("mousedown",function () {
             check = true;
@@ -32,27 +34,29 @@ nav.routing={
         this.mainBox.addEventListener("mouseleave",function () {
             check = false;
         })
-
-        let box=this.currnt[2];
-        let X, Y;
         this.mainBox.addEventListener("mousemove",function (e) {
             if (!check) return
             X = e.clientX;  
             Y = e.clientY;
             box.style.transform=`rotateX(${(Y/2)}deg) rotateY(${(X/2)}deg)`;
         });
+
         // for toush screen
         this.mainBox.addEventListener("touchstart",function () {
             check = true;
+
         })
         this.mainBox.addEventListener("touchend",function () {
             check = false
-        })
 
+        })
         this.mainBox.addEventListener("touchmove",function (e) {
             if (!check) return
-            X = e.clientX;  
-            Y = e.clientY;
+            X = e.touches[0].clientX;  
+            Y = e.touches[0].clientY;
+            if (box == null ) return;
+                
+
             box.style.transform=`rotateX(${(Y/2)}deg) rotateY(${(X/2)}deg)`;
         })
     },
