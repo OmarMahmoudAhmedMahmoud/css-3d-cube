@@ -52,7 +52,7 @@ body{
     flex-wrap: nowrap;
     overflow-x: scroll;
     /* scroll-behavior: smooth; */
-    scrollbar-width:thin;
+    scrollbar-width:none;
     position: static !important;
 }
 
@@ -101,6 +101,7 @@ body{
 
 
 #_3dBox{
+    user-select: none;
     height:calc( 100vh - 60px);
     margin-top: 5px;
     display: grid;
