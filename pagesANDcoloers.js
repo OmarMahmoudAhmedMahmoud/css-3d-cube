@@ -38,8 +38,18 @@ export const pages={
     ],
 
     Pyramid  : [
-        document.getElementById("3d-tri"),
-        `Coming Soon`
+        document.getElementById("3d-pir"),
+        `   <div id="pri-main">
+                <div id="pir-box">
+                    <div class="front"></div>
+                    <div class="behind"></div>
+                    <div class="left"></div>
+                    <div class="rigth"></div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+        `,
+        `pir-box`
     ],
 
     ball : [

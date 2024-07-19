@@ -42,8 +42,8 @@ web.routing = {
         pageTags.mainBox.addEventListener("mouseup",() => check = false)
         pageTags.mainBox.addEventListener("mouseleave",() => check = false)
         pageTags.mainBox.addEventListener("mousemove",function (e) {
-            Xpos = e.clientX / 2;  
-            Ypos = e.clientY / 2;
+            Xpos = (e.clientX / 4) * -1;  
+            Ypos = (e.clientY / 4) * -1;
             web.routing.routaingEle(box , Xpos , Ypos , check)
 
         });

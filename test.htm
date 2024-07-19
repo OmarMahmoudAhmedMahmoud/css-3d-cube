@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3dTEst</title>
+    <style>
+        body{
+            background-color: white;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        #_3dBox{
+            height: 90vh;
+            width: 100vw;
+            background-color: rgb(2, 20, 126);
+        }
+
+        #pri-main{
+
+            width: 100%;
+            height: 100%;
+            perspective: 100%;
+            user-select: none;
+
+            --size :15vh;
+            --Ssize :-15vh;
+        }
+
+        #pir-box{
+            user-select: none;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform:rotateX(46deg) rotateY(-40deg);
+            transition: transform 5s;
+            transition-timing-function: linear;
+        }
+
+
+        #pir-box > div{
+            position: absolute;
+            background-color: transparent;
+            inset: 0;margin: auto;
+            width: 0; 
+            height: 0; 
+            border: 2px var(--main) solid;
+            font-size: 50px;
+            transform-origin: bottom ;
+            
+        }
+
+        #pir-box .front{
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            border-bottom: calc( 2 * var(--size)) solid rgb(155, 0, 0);
+
+            transform: translateZ(var(--size)) rotateX(30deg);
+        }
+        #pir-box .behind{
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            border-bottom: calc( 2 * var(--size)) solid rgb(64, 224, 91);
+
+            transform: translateZ(var(--Ssize)) rotateX(-30deg);
+        }
+        #pir-box .left{
+            background-color: transparent;
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            border-bottom: calc( 2 * var(--size)) solid black;
+
+            transform: translateX(var(--Ssize)) rotateY(-90deg) rotateX(30deg);
+        }
+        #pir-box .rigth{
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            border-bottom: calc( 2 * var(--size)) solid rgb(0, 0, 0);
+
+            transform: translateX(var(--size)) rotateY(-90deg) rotateX(-30deg);
+        }
+        #pir-box .bottom{
+            width: calc( 2 * var(--size));
+            height: calc( 2 * var(--size));
+            background-color: rgb(153, 12, 99);
+
+            transform: translateY(var(--size)) rotateX(90deg);
+            transform-origin:center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <main id="_3dBox">
+        <div id="pri-main">
+          <div id="pir-box">
+    
+            <div class="front"></div>
+            <div class="behind"></div>
+            <div class="left"></div>
+            <div class="rigth"></div>
+            <div class="bottom"></div>
+    
+          </div>
+        </div>
+      </main>
+</body>
+</html>
